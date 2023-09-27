@@ -1,0 +1,29 @@
+//Q.(b] A positive integer is entered through the keyboard, write a program
+to obtain the prime factors of the number. Modify the function
+suitably to obtain the prime factors recursively.
+
+#include<stdio.h>
+void prime(int n);
+void main()
+{
+    int n;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    printf("The Prime Factors of %d are: ",n);
+    prime(n);
+}
+
+void prime(int n)
+{
+    int x;
+    for(x=2;x<=n;x++)
+    {
+        if(n%x==0)
+        {
+            printf("%d, ",x);
+            prime(n/x);
+            break;
+        }
+    }
+}
